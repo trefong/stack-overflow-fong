@@ -20,9 +20,9 @@
       <h4><a href='/questions/<%= question.id %>'><%= question.title %></a></h4>
        <%= question.answers.length %> Answers
       <p>
-        <span class='username'><%= question.user.username %></span>
-        <span class='timestamp'><%= question.created_at %></span>
-        <span class='comment-count'><%= question.comments %></span>
+        <span class='username'> <a href="/users/<%= question.user.id %>"><%= question.user.username %></a> </span>
+        <span class='timestamp'> Created at: <%= question.created_at %></span><br>
+        <span class='comment-count'><%= question.comments.length %> Comments</span>
         <a class="delete" href='/questions/<%= question.id %>'></a>
       </p>
     </article>
