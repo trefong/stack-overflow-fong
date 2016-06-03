@@ -1,0 +1,37 @@
+<header>
+  <h1>DBC Overflow</h1>
+
+  <p id="navbar">
+    <a href="/questions/new">new</a>
+    <a href="/comments/new">comments</a>
+    <a href="/users/new">login</a>
+  </p>
+
+</header>
+
+
+<div class='question-container'>
+  <% @questions.each do |question| %>
+
+    <article id="<%= question.id %>">
+      <form method="question" action='/questions/<%= question.id %>/vote' class="inline">
+        <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button upvote-button"></button>
+      </form>
+      <h2><a href='/questions/<%= question.id %>'><%= question.title %></a></h2>
+      <p>
+        <span class='points'><%= question.votes %></span>
+        <span class='username'><%= question.username %></span>
+        <span class='timestamp'><%= question.time_since_creation %></span>
+        <span class='comment-count'><%= question.comments %></span>
+        <a class="delete" href='/questions/<%= question.id %>'></a>
+      </p>
+    </article>
+
+  <% end %>
+</div>
+
+<form id="questions" method="question" action="/questions">
+  <input type="text" name="title" placeholder="title">
+  <input type="text" name="question" placeholder="question">
+  <input type="submit" value="submit new question">
+</form>
