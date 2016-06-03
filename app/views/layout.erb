@@ -29,10 +29,10 @@
 <body>
   <nav>
     <div class="nav-wrapper col s12 m6">
-      <a href="/" class="brand-logo"><i class="material-icons right">view_carousel</i>Underflow</a>
+      <a href="/" class="brand-logo"><i class="material-icons left">hearing</i>Musings</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if current_user %>
-        <li><a href="/decks/new"><i class="material-icons right">library_add</i>New Deck</a></li>
+        <li><a href="/questions/new"><i class="material-icons right">question_answer</i>Ask Question</a></li>
         <li><a href="/users/<%= current_user.id %>"><i class="material-icons right">android</i>Profile</a></li>
         <li><a href="/sessions/delete"><i class="material-icons right">power_settings_new</i>Logout</a></li>
         <% else %>

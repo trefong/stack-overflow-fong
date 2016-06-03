@@ -1,5 +1,7 @@
-<% @questions do |question| %>
+<h2>Hello <%= current_user.username %></h2>
 
-<%= question %>
+<% @questions.each do |question| %>
+
+    <h4><a href='/questions/<%= question.id %>'><%= question.title %></a></h4><br>
 
 <% end %>

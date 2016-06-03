@@ -20,3 +20,10 @@ Comments:<br>
     <br><br>
   <% end %>
 </p>
+
+<h3>Post an Answer</h3>
+<form id='new_answer' action = '/answers' method = 'post'>
+<textarea form='new_answer' rows="4" cols="50" name='body' placeholder='Body'></textarea><br><br>
+<input type="hidden" name="question_id" value="<%= @question.id %>">
+<input type='submit' value='Submit'>
+</form>
