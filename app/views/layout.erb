@@ -16,9 +16,32 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <title></title>
 </head>
 <body>
+  <nav>
+    <div class="nav-wrapper col s12 m6">
+      <a href="/" class="brand-logo"><i class="material-icons left">hearing</i>Musings</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if current_user %>
+        <li><a href="/questions/new"><i class="material-icons right">question_answer</i>Ask Question</a></li>
+        <li><a href="/users/<%= current_user.id %>"><i class="material-icons right">android</i>Profile</a></li>
+        <li><a href="/sessions/delete"><i class="material-icons right">power_settings_new</i>Logout</a></li>
+        <% else %>
+        <li><a href="/users/new">Register</a></li>
+        <li><a href="/sessions/new">Login</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
   <%= yield %>
 </body>
 </html>

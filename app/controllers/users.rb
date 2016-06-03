@@ -3,9 +3,10 @@ get '/users/new' do
 end
 
 post '/users/new' do
-  User.new(username: params[:username], password: params[:password])
+  @user = User.new(username: params[:username], password: params[:password])
   if @user.save
     session[:id] = @user.id
+    redirect '/questions'
   else
     #error handling
     redirect '/users/new'
@@ -14,5 +15,6 @@ end
 
 get '/users/:id' do
   @user = User.find(params[:id])
+  @questions = @user.questions
   erb :'users/show'
 end
