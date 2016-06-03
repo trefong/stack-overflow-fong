@@ -19,6 +19,8 @@
       </form>
       <h2><a href='/questions/<%= question.id %>'><%= question.title %></a></h2>
       <p>
+      <h2><a href='/questions/<%= question.id %>'><%= question.body %></a></h2>
+      <p>
         <span class='username'><%= question.user.username %></span>
         <span class='timestamp'><%= question.created_at %></span>
         <span class='comment-count'><%= question.comments %></span>
