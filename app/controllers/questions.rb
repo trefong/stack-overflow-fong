@@ -9,6 +9,7 @@ end
 
 get '/questions/:id' do
   @question = Question.find(params[:id])
+  @user =
   erb :'questions/show'
 end
 
