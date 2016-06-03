@@ -27,6 +27,21 @@
   <title></title>
 </head>
 <body>
+  <nav>
+    <div class="nav-wrapper col s12 m6">
+      <a href="/" class="brand-logo"><i class="material-icons right">view_carousel</i>Underflow</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if current_user %>
+        <li><a href="/decks/new"><i class="material-icons right">library_add</i>New Deck</a></li>
+        <li><a href="/users/<%= current_user.id %>"><i class="material-icons right">android</i>Profile</a></li>
+        <li><a href="/sessions/delete"><i class="material-icons right">power_settings_new</i>Logout</a></li>
+        <% else %>
+        <li><a href="/users/new">Register</a></li>
+        <li><a href="/sessions/new">Login</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
   <%= yield %>
 </body>
 </html>
