@@ -85,8 +85,3 @@ DEPENDENCIES
   sinatra-contrib
   thin
 
-RUBY VERSION
-   ruby 2.2.5p319
-
-BUNDLED WITH
-   1.12.4
