@@ -1,6 +1,7 @@
 20.times do
   User.create(
-    username: Faker::Internet.user_name
+    username: Faker::Internet.user_name,
+    password: "123"
     )
 end
 
@@ -14,7 +15,7 @@ end
 end
 
 20.times do
-  Question.all.shuffle.pop.comments.create(user_id: rand(20),title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph)
+  Question.all.shuffle.pop.comments.create(user_id: rand(20), body: Faker::Lorem.paragraph)
   Answer.all.shuffle.pop.comments.create(user_id: rand(20), body: Faker::Lorem.sentence)
 end
 
