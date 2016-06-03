@@ -84,4 +84,3 @@ DEPENDENCIES
   sinatra
   sinatra-contrib
   thin
-

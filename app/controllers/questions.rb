@@ -3,7 +3,8 @@ get '/questions/new' do
 end
 
 post '/questions' do
-  Question.create(title: params[:title], body: params[:body], user_id: session[:user_id])
+  Question.create(title: params[:title], body: params[:body], user_id: @current_user.id)
+  redirect '/questions'
 end
 
 get '/questions/:id' do
