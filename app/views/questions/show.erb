@@ -1,5 +1,22 @@
+Question:<br>
 <h4><%= @question.title %></h4>
-<hr>
 <p>
   <%= @question.body %>
+</p>
+Comments:<br>
+<p><% @question.comments.each do |comment| %>
+<%= comment.body %>
+<br>
+<% end %></p>
+<hr>
+<p>
+  Answers:<br><br>
+  <% @question.answers.each do |answer| %>
+  <%= answer.body %><br>
+  Comments:<br>
+  <% answer.comments.each do |comment| %>
+    <%= comment.body %><br>
+    <% end %>
+    <br><br>
+  <% end %>
 </p>
